@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -551,7 +551,7 @@
                     <button id="refreshFilesBtn" class="btn btn-small">刷新文件列表</button>
                     <div class="word-files-list" id="wordFilesList">
                         <div style="text-align: center; padding: 20px; color: #666;">
-                            点击"刷新文件列表"加载服务器单词文件
+                            点击"刷新文件列表"扫描服务器单词文件
                         </div>
                     </div>
                     <button id="loadSelectedBtn" class="btn btn-small" disabled>加载选中的文件</button>
@@ -755,6 +755,20 @@
         const wordFilesList = document.getElementById('wordFilesList');
         const loadSelectedBtn = document.getElementById('loadSelectedBtn');
         
+        // ============ 核心修改：预定义文件列表 ============
+        // 在这里列出你的 words_data 文件夹中所有的 JSON 文件名
+        const KNOWN_WORD_FILES = [
+            'words.json',      // 默认单词文件
+            // 如果有其他文件，继续添加，例如：
+            // 'fruits.json',
+            // 'animals.json',
+            // 'verbs.json',
+            // 'adjectives.json',
+            // 'daily.json',
+            // 'business.json'
+        ];
+        // ==============================================
+        
         // 事件监听器
         startBtn.addEventListener('click', startLearning);
         finishBtn.addEventListener('click', showResults);
@@ -797,8 +811,252 @@
             
             updateDataStatus();
             
-            // 自动加载服务器文件列表
-            loadWordFilesList();
+            // 直接使用预定义的文件列表显示
+            displayKnownFileList();
+            
+            // 尝试加载默认单词文件
+            loadDefaultWordFile();
+        }
+        
+        // 显示已知文件列表
+        function displayKnownFileList() {
+            const files = KNOWN_WORD_FILES.map(filename => ({
+                name: filename,
+                filename: filename,
+                word_count: '?',
+                size: '?'
+            }));
+            
+            displayWordFilesList(files);
+        }
+        
+        // 加载默认单词文件 (words_data/words.json)
+        async function loadDefaultWordFile() {
+            if (KNOWN_WORD_FILES.length === 0) return;
+            
+            const defaultFile = KNOWN_WORD_FILES[0]; // 使用列表中的第一个文件作为默认
+            try {
+                const response = await fetch(`/words_data/${defaultFile}`);
+                if (response.ok) {
+                    const words = await response.json();
+                    if (words && Array.isArray(words)) {
+                        appState.words = words;
+                        appState.currentFilename = defaultFile;
+                        appState.dataSource = 'server';
+                        updateDataStatus();
+                        console.log(`成功自动加载默认单词文件: ${defaultFile} (${words.length} 个单词)`);
+                    }
+                }
+            } catch (error) {
+                console.log('未找到默认单词文件，请手动选择');
+            }
+        }
+        
+        // 从服务器加载单词文件列表
+        async function loadWordFilesList() {
+            try {
+                wordFilesList.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">扫描中...</div>';
+                loadSelectedBtn.disabled = true;
+                
+                const foundFiles = [];
+                
+                // 逐个尝试加载预定义的文件来检查是否存在并获取信息
+                for (let filename of KNOWN_WORD_FILES) {
+                    try {
+                        const response = await fetch(`/words_data/${filename}`);
+                        if (response.ok) {
+                            // 尝试获取文件大小
+                            const contentLength = response.headers.get('content-length');
+                            
+                            // 尝试解析JSON来获取单词数量
+                            try {
+                                const content = await response.clone().json();
+                                if (Array.isArray(content)) {
+                                    foundFiles.push({
+                                        name: filename,
+                                        filename: filename,
+                                        word_count: content.length,
+                                        size: contentLength ? parseInt(contentLength) : '?'
+                                    });
+                                } else if (content.words && Array.isArray(content.words)) {
+                                    foundFiles.push({
+                                        name: filename,
+                                        filename: filename,
+                                        word_count: content.words.length,
+                                        size: contentLength ? parseInt(contentLength) : '?'
+                                    });
+                                } else {
+                                    // 文件存在但不是预期的格式
+                                    foundFiles.push({
+                                        name: filename,
+                                        filename: filename,
+                                        word_count: '格式错误',
+                                        size: contentLength ? parseInt(contentLength) : '?'
+                                    });
+                                }
+                            } catch {
+                                // 如果无法解析JSON，仍然添加文件但标记数量未知
+                                foundFiles.push({
+                                    name: filename,
+                                    filename: filename,
+                                    word_count: '解析失败',
+                                    size: contentLength ? parseInt(contentLength) : '?'
+                                });
+                            }
+                        }
+                    } catch (e) {
+                        // 文件不存在，忽略
+                        console.log(`文件 ${filename} 不存在`);
+                    }
+                }
+                
+                if (foundFiles.length > 0) {
+                    displayWordFilesList(foundFiles);
+                } else {
+                    // 如果没找到任何文件，显示手动输入选项
+                    wordFilesList.innerHTML = `
+                        <div style="text-align: center; padding: 20px; color: #666;">
+                            没有找到JSON文件<br>
+                            <small>请确认文件名是否在预定义列表中</small><br>
+                            <input type="text" id="manualFilename" placeholder="输入文件名 (如: words.json)" style="width: 90%; padding: 8px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc;">
+                            <button id="manualLoadBtn" class="btn btn-small">手动加载</button>
+                        </div>
+                    `;
+                    
+                    document.getElementById('manualLoadBtn')?.addEventListener('click', () => {
+                        const filename = document.getElementById('manualFilename').value.trim();
+                        if (filename) {
+                            loadSpecificWordFile(filename);
+                        }
+                    });
+                }
+            } catch (error) {
+                console.error('扫描单词文件失败:', error);
+                wordFilesList.innerHTML = `
+                    <div style="text-align: center; padding: 20px; color: #ff6b6b;">
+                        扫描失败: ${error.message}<br>
+                        <input type="text" id="manualFilename" placeholder="输入文件名 (如: words.json)" style="width: 90%; padding: 8px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc;">
+                        <button id="manualLoadBtn" class="btn btn-small">手动加载</button>
+                    </div>
+                `;
+                
+                document.getElementById('manualLoadBtn')?.addEventListener('click', () => {
+                    const filename = document.getElementById('manualFilename').value.trim();
+                    if (filename) {
+                        loadSpecificWordFile(filename);
+                    }
+                });
+            }
+        }
+        
+        // 显示单词文件列表
+        function displayWordFilesList(files) {
+            if (files.length === 0) {
+                wordFilesList.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">服务器上没有单词文件</div>';
+                loadSelectedBtn.disabled = true;
+                return;
+            }
+            
+            wordFilesList.innerHTML = '';
+            
+            files.forEach(file => {
+                const fileItem = document.createElement('div');
+                fileItem.className = 'word-file-item';
+                
+                const sizeText = file.size !== '?' ? formatFileSize(file.size) : '未知大小';
+                const countText = file.word_count !== '?' ? `${file.word_count} 个单词` : '未知数量';
+                
+                fileItem.innerHTML = `
+                    <div>
+                        <strong>${file.name}</strong>
+                        <div class="file-info">${countText} · ${sizeText}</div>
+                    </div>
+                `;
+                
+                fileItem.addEventListener('click', () => {
+                    // 移除其他项目的选中状态
+                    document.querySelectorAll('.word-file-item').forEach(item => {
+                        item.classList.remove('selected');
+                    });
+                    // 设置当前项目为选中状态
+                    fileItem.classList.add('selected');
+                    loadSelectedBtn.disabled = false;
+                    
+                    // 存储选中的文件信息
+                    wordFilesList.selectedFile = file.filename;
+                    wordFilesList.selectedFileInfo = file;
+                });
+                
+                wordFilesList.appendChild(fileItem);
+            });
+        }
+        
+        // 格式化文件大小
+        function formatFileSize(bytes) {
+            if (bytes === 0 || bytes === '?') return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        // 加载特定文件名的单词文件
+        async function loadSpecificWordFile(filename) {
+            try {
+                wordFilesList.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">加载中...</div>';
+                
+                const response = await fetch(`/words_data/${filename}`);
+                if (response.ok) {
+                    const words = await response.json();
+                    if (words && Array.isArray(words)) {
+                        appState.words = words;
+                        appState.currentFilename = filename;
+                        appState.dataSource = 'server';
+                        updateDataStatus();
+                        alert(`成功加载 ${words.length} 个单词！`);
+                        
+                        // 刷新文件列表显示
+                        loadWordFilesList();
+                    } else if (words.words && Array.isArray(words.words)) {
+                        appState.words = words.words;
+                        appState.currentFilename = filename;
+                        appState.dataSource = 'server';
+                        updateDataStatus();
+                        alert(`成功加载 ${words.words.length} 个单词！`);
+                        
+                        // 刷新文件列表显示
+                        loadWordFilesList();
+                    } else {
+                        throw new Error('文件格式不正确');
+                    }
+                } else {
+                    alert(`文件 ${filename} 不存在`);
+                    loadWordFilesList();
+                }
+            } catch (error) {
+                console.error('加载失败:', error);
+                alert('加载失败: ' + error.message);
+                loadWordFilesList();
+            }
+        }
+        
+        // 加载选中的单词文件
+        async function loadSelectedWordFile() {
+            const selectedFile = wordFilesList.selectedFile;
+            if (!selectedFile) {
+                alert('请先选择一个单词文件');
+                return;
+            }
+            
+            await loadSpecificWordFile(selectedFile);
+        }
+        
+        // 使用示例数据
+        function useSampleData() {
+            appState.words = sampleWords;
+            appState.dataSource = 'sample';
+            updateDataStatus();
+            alert(`已加载 ${sampleWords.length} 个水果单词！`);
         }
         
         // 更新数据状态显示
@@ -818,111 +1076,13 @@
                     default:
                         sourceText = '未知来源';
                 }
-                dataStatus.textContent = `已加载 ${appState.words.length} 个单词 - ${sourceText}`;
+                dataStatus.textContent = `✅ 已加载 ${appState.words.length} 个单词 - ${sourceText}`;
                 dataStatus.className = 'data-status loaded';
                 startBtn.disabled = false;
             } else {
-                dataStatus.textContent = '当前没有加载单词数据';
+                dataStatus.textContent = '⚠️ 当前没有加载单词数据';
                 dataStatus.className = 'data-status empty';
                 startBtn.disabled = true;
-            }
-        }
-        
-        // 从服务器加载单词文件列表
-        async function loadWordFilesList() {
-            try {
-                wordFilesList.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">加载中...</div>';
-                loadSelectedBtn.disabled = true;
-                
-                const response = await fetch('/api/word-files');
-                if (response.ok) {
-                    const files = await response.json();
-                    displayWordFilesList(files);
-                } else {
-                    throw new Error('无法加载单词文件列表');
-                }
-            } catch (error) {
-                console.error('加载单词文件列表失败:', error);
-                wordFilesList.innerHTML = `<div style="text-align: center; padding: 20px; color: #ff6b6b;">加载失败: ${error.message}</div>`;
-            }
-        }
-        
-        // 显示单词文件列表
-        function displayWordFilesList(files) {
-            if (files.length === 0) {
-                wordFilesList.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">服务器上没有单词文件</div>';
-                loadSelectedBtn.disabled = true;
-                return;
-            }
-            
-            wordFilesList.innerHTML = '';
-            let selectedFile = null;
-            
-            files.forEach(file => {
-                const fileItem = document.createElement('div');
-                fileItem.className = 'word-file-item';
-                fileItem.innerHTML = `
-                    <div>
-                        <strong>${file.name}</strong>
-                        <div class="file-info">${file.word_count} 个单词 · ${formatFileSize(file.size)}</div>
-                    </div>
-                `;
-                
-                fileItem.addEventListener('click', () => {
-                    // 移除其他项目的选中状态
-                    document.querySelectorAll('.word-file-item').forEach(item => {
-                        item.classList.remove('selected');
-                    });
-                    // 设置当前项目为选中状态
-                    fileItem.classList.add('selected');
-                    selectedFile = file.filename;
-                    loadSelectedBtn.disabled = false;
-                    
-                    // 存储选中的文件信息
-                    wordFilesList.selectedFile = selectedFile;
-                    wordFilesList.selectedFileInfo = file;
-                });
-                
-                wordFilesList.appendChild(fileItem);
-            });
-        }
-        
-        // 格式化文件大小
-        function formatFileSize(bytes) {
-            if (bytes === 0) return '0 Bytes';
-            const k = 1024;
-            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-        }
-        
-        // 加载选中的单词文件
-        async function loadSelectedWordFile() {
-            const selectedFile = wordFilesList.selectedFile;
-            if (!selectedFile) {
-                alert('请先选择一个单词文件');
-                return;
-            }
-            
-            try {
-                const response = await fetch(`/api/words/${selectedFile}`);
-                if (response.ok) {
-                    const words = await response.json();
-                    if (words && Array.isArray(words)) {
-                        appState.words = words;
-                        appState.currentFilename = selectedFile;
-                        appState.dataSource = 'server';
-                        updateDataStatus();
-                        alert(`成功从服务器加载了 ${words.length} 个单词！\n文件: ${selectedFile}`);
-                    } else {
-                        throw new Error('返回的数据格式不正确');
-                    }
-                } else {
-                    throw new Error('无法加载单词数据');
-                }
-            } catch (error) {
-                console.error('加载单词数据失败:', error);
-                alert('加载单词数据失败: ' + error.message);
             }
         }
         
@@ -990,12 +1150,12 @@
             
             // 背面
             backWord.textContent = currentWord.word;
-            pronunciation.textContent = currentWord.pronunciation;
-            translation.textContent = currentWord.translation;
-            wordImage.src = currentWord.image;
+            pronunciation.textContent = currentWord.pronunciation || '';
+            translation.textContent = currentWord.translation || '';
+            wordImage.src = currentWord.image || '';
             wordImage.alt = currentWord.word;
-            phrase.textContent = currentWord.phrase;
-            example.textContent = currentWord.example;
+            phrase.textContent = currentWord.phrase || '';
+            example.textContent = currentWord.example || '';
             
             // 确保卡片是正面朝上
             if (wordCard.classList.contains('flipped')) {
@@ -1136,12 +1296,12 @@
             wordDetailScreen.classList.remove('hidden');
             
             detailWord.textContent = wordObj.word;
-            detailPronunciation.textContent = wordObj.pronunciation;
-            detailTranslation.textContent = wordObj.translation;
-            detailImage.src = wordObj.image;
+            detailPronunciation.textContent = wordObj.pronunciation || '';
+            detailTranslation.textContent = wordObj.translation || '';
+            detailImage.src = wordObj.image || '';
             detailImage.alt = wordObj.word;
-            detailPhrase.textContent = wordObj.phrase;
-            detailExample.textContent = wordObj.example;
+            detailPhrase.textContent = wordObj.phrase || '';
+            detailExample.textContent = wordObj.example || '';
             
             displayRelatedWords(wordObj, detailRelatedWords);
         }
@@ -1158,13 +1318,13 @@
             appState.mastered.forEach(word => {
                 const wordObj = appState.words.find(w => w.word === word);
                 if (wordObj) {
-                    csvContent += `"${escapeCsvField(wordObj.word)}","${escapeCsvField(wordObj.pronunciation)}","${escapeCsvField(wordObj.translation)}","已掌握"\n`;
+                    csvContent += `"${escapeCsvField(wordObj.word)}","${escapeCsvField(wordObj.pronunciation || '')}","${escapeCsvField(wordObj.translation || '')}","已掌握"\n`;
                 }
             });
             
             appState.words.forEach(wordObj => {
                 if (!appState.mastered.includes(wordObj.word)) {
-                    csvContent += `"${escapeCsvField(wordObj.word)}","${escapeCsvField(wordObj.pronunciation)}","${escapeCsvField(wordObj.translation)}","需练习"\n`;
+                    csvContent += `"${escapeCsvField(wordObj.word)}","${escapeCsvField(wordObj.pronunciation || '')}","${escapeCsvField(wordObj.translation || '')}","需练习"\n`;
                 }
             });
             
@@ -1251,14 +1411,6 @@
             }
             
             return result;
-        }
-        
-        // 使用示例数据
-        function useSampleData() {
-            appState.words = sampleWords;
-            appState.dataSource = 'sample';
-            updateDataStatus();
-            alert(`已加载 ${sampleWords.length} 个水果单词！`);
         }
         
         // 初始化应用
