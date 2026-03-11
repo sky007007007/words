@@ -1,0 +1,731 @@
+[
+    {
+        "word": "family tree",
+        "pronunciation": "/ˈfæm.əl.i triː/",
+        "translation": "家谱",
+        "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "draw a family tree",
+        "example": "For our homework, we had to draw a family tree going back three generations.",
+        "related": ["family", "ancestor", "generation", "relative", "genealogy"]
+    },
+    {
+        "word": "noticeboard",
+        "pronunciation": "/ˈnəʊ.tɪs.bɔːd/",
+        "translation": "公告板",
+        "image": "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "check the noticeboard",
+        "example": "Please check the noticeboard for any new announcements.",
+        "related": ["bulletin", "announcement", "information", "post", "message"]
+    },
+    {
+        "word": "project",
+        "pronunciation": "/ˈprɒdʒ.ekt/",
+        "translation": "项目，课题",
+        "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "work on a project",
+        "example": "We are working on a group project about climate change.",
+        "related": ["assignment", "task", "work", "plan", "research"]
+    },
+    {
+        "word": "craft",
+        "pronunciation": "/krɑːft/",
+        "translation": "工艺，手艺",
+        "image": "https://images.unsplash.com/photo-1447875569765-2b3db822bec9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "do a craft",
+        "example": "The children enjoyed doing a craft with paper and glue.",
+        "related": ["art", "handmade", "skill", "creation", "handicraft"]
+    },
+    {
+        "word": "temple",
+        "pronunciation": "/ˈtem.pəl/",
+        "translation": "寺庙",
+        "image": "https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "visit a temple",
+        "example": "We visited an ancient temple during our trip to Kyoto.",
+        "related": ["shrine", "worship", "religious", "monument", "sacred"]
+    },
+    {
+        "word": "mean",
+        "pronunciation": "/miːn/",
+        "translation": "意思是；小气的",
+        "image": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "what does it mean",
+        "example": "What does this word mean in English?",
+        "related": ["signify", "represent", "definition", "explanation", "interpret"]
+    },
+    {
+        "word": "garlic",
+        "pronunciation": "/ˈɡɑː.lɪk/",
+        "translation": "大蒜",
+        "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "add garlic",
+        "example": "The recipe says to add two cloves of garlic.",
+        "related": ["onion", "herb", "spice", "cooking", "flavor"]
+    },
+    {
+        "word": "steam",
+        "pronunciation": "/stiːm/",
+        "translation": "蒸汽",
+        "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "full of steam",
+        "example": "Be careful, the kettle is full of hot steam.",
+        "related": ["vapor", "heat", "boil", "evaporate", "mist"]
+    },
+    {
+        "word": "prawn",
+        "pronunciation": "/prɔːn/",
+        "translation": "大虾",
+        "image": "https://images.unsplash.com/photo-1587334941662-19ffa56a503f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "eat prawns",
+        "example": "We ate grilled prawns at the seaside restaurant.",
+        "related": ["shrimp", "seafood", "shellfish", "lobster", "crab"]
+    },
+    {
+        "word": "stall",
+        "pronunciation": "/stɔːl/",
+        "translation": "货摊",
+        "image": "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "market stall",
+        "example": "I bought some fresh fruit from a market stall.",
+        "related": ["booth", "stand", "market", "vendor", "seller"]
+    },
+    {
+        "word": "bake",
+        "pronunciation": "/beɪk/",
+        "translation": "烘烤",
+        "image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "bake a cake",
+        "example": "My grandmother taught me how to bake a cake.",
+        "related": ["cook", "oven", "pastry", "bread", "dessert"]
+    },
+    {
+        "word": "chilli",
+        "pronunciation": "/ˈtʃɪl.i/",
+        "translation": "辣椒",
+        "image": "https://images.unsplash.com/photo-1570194065650-2f276eef1d6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "add chilli",
+        "example": "This dish is a bit spicy because I added some chilli.",
+        "related": ["spicy", "pepper", "hot", "flavor", "seasoning"]
+    },
+    {
+        "word": "pyramid",
+        "pronunciation": "/ˈpɪr.ə.mɪd/",
+        "translation": "金字塔",
+        "image": "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "see the pyramids",
+        "example": "One day I would like to see the pyramids in Egypt.",
+        "related": ["Egypt", "ancient", "monument", "triangle", "structure"]
+    },
+    {
+        "word": "ingredient",
+        "pronunciation": "/ɪnˈɡriː.di.ənt/",
+        "translation": "成分，原料",
+        "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "list of ingredients",
+        "example": "Check the list of ingredients before you buy the product.",
+        "related": ["component", "element", "material", "recipe", "cooking"]
+    },
+    {
+        "word": "ham",
+        "pronunciation": "/hæm/",
+        "translation": "火腿",
+        "image": "https://images.unsplash.com/photo-1587334941662-19ffa56a503f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "slice of ham",
+        "example": "I'd like a sandwich with a slice of ham and cheese.",
+        "related": ["meat", "pork", "sandwich", "breakfast", "deli"]
+    },
+    {
+        "word": "slice",
+        "pronunciation": "/slaɪs/",
+        "translation": "薄片；切片",
+        "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "slice of bread",
+        "example": "Could you please pass me another slice of bread?",
+        "related": ["cut", "piece", "portion", "segment", "section"]
+    },
+    {
+        "word": "oven",
+        "pronunciation": "/ˈʌv.ən/",
+        "translation": "烤箱",
+        "image": "https://images.unsplash.com/photo-1556912164-f0c0e86d3f7c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "preheat the oven",
+        "example": "Preheat the oven to 180 degrees before baking the cookies.",
+        "related": ["bake", "cook", "kitchen", "appliance", "heat"]
+    },
+    {
+        "word": "pastry",
+        "pronunciation": "/ˈpeɪ.stri/",
+        "translation": "油酥点心",
+        "image": "https://images.unsplash.com/photo-1555507032-6d03773085e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "eat a pastry",
+        "example": "I bought a delicious pastry from the bakery this morning.",
+        "related": ["bakery", "dessert", "cake", "pie", "sweet"]
+    },
+    {
+        "word": "pudding",
+        "pronunciation": "/ˈpʊd.ɪŋ/",
+        "translation": "布丁",
+        "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "chocolate pudding",
+        "example": "For dessert, we had a rich chocolate pudding.",
+        "related": ["dessert", "sweet", "custard", "cream", "chocolate"]
+    },
+    {
+        "word": "stomach ache",
+        "pronunciation": "/ˈstʌm.ək eɪk/",
+        "translation": "胃痛",
+        "image": "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "have a stomach ache",
+        "example": "I think I ate too much candy and now I have a stomach ache.",
+        "related": ["pain", "illness", "sickness", "discomfort", "indigestion"]
+    },
+    {
+        "word": "fare",
+        "pronunciation": "/feər/",
+        "translation": "车费，票价",
+        "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "bus fare",
+        "example": "The bus fare to the city centre is two pounds.",
+        "related": ["price", "cost", "ticket", "transport", "fee"]
+    },
+    {
+        "word": "traffic jam",
+        "pronunciation": "/ˈtræf.ɪk dʒæm/",
+        "translation": "交通堵塞",
+        "image": "https://images.unsplash.com/photo-1475087542963-13ab5e611954?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "stuck in a traffic jam",
+        "example": "We were late because we got stuck in a traffic jam.",
+        "related": ["congestion", "gridlock", "delay", "road", "vehicle"]
+    },
+    {
+        "word": "motorcycle",
+        "pronunciation": "/ˈməʊ.təˌsaɪ.kəl/",
+        "translation": "摩托车",
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25856cd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "ride a motorcycle",
+        "example": "He loves to ride his motorcycle on the weekends.",
+        "related": ["bike", "vehicle", "transport", "ride", "scooter"]
+    },
+    {
+        "word": "flyover",
+        "pronunciation": "/ˈflaɪ.əʊ.vər/",
+        "translation": "立交桥",
+        "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "drive on the flyover",
+        "example": "We took the flyover to avoid the busy intersection below.",
+        "related": ["bridge", "overpass", "highway", "road", "transport"]
+    },
+    {
+        "word": "pavement",
+        "pronunciation": "/ˈpeɪv.mənt/",
+        "translation": "人行道",
+        "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "walk on the pavement",
+        "example": "Please remember to walk on the pavement, not on the road.",
+        "related": ["sidewalk", "footpath", "walkway", "pedestrian", "street"]
+    },
+    {
+        "word": "footbridge",
+        "pronunciation": "/ˈfʊt.brɪdʒ/",
+        "translation": "人行天桥",
+        "image": "https://images.unsplash.com/photo-1501139083538-0139583c060f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "cross the footbridge",
+        "example": "We used the footbridge to safely cross the busy highway.",
+        "related": ["bridge", "crossing", "pedestrian", "overpass", "walkway"]
+    },
+    {
+        "word": "display",
+        "pronunciation": "/dɪˈspleɪ/",
+        "translation": "展示，陈列",
+        "image": "https://images.unsplash.com/photo-1562976540-1502c2145186?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "on display",
+        "example": "The museum has a new display of ancient pottery.",
+        "related": ["exhibit", "show", "presentation", "showcase", "arrangement"]
+    },
+    {
+        "word": "slightly",
+        "pronunciation": "/ˈslaɪt.li/",
+        "translation": "稍微，略微",
+        "image": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "slightly different",
+        "example": "This version of the recipe is slightly different from the original.",
+        "related": ["somewhat", "moderately", "marginally", "a little", "mildly"]
+    },
+    {
+        "word": "fiercely",
+        "pronunciation": "/ˈfɪəs.li/",
+        "translation": "猛烈地，激烈地",
+        "image": "https://images.unsplash.com/photo-1474511320723-9a56873867b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "fiercely competitive",
+        "example": "The two teams were fiercely competitive until the last minute.",
+        "related": ["intensely", "violently", "aggressively", "strongly", "passionately"]
+    },
+    {
+        "word": "stream",
+        "pronunciation": "/striːm/",
+        "translation": "小溪",
+        "image": "https://images.unsplash.com/photo-1569916350436-f30cb7c98d39?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "a babbling stream",
+        "example": "We could hear the sound of a babbling stream nearby.",
+        "related": ["river", "brook", "creek", "water", "flow"]
+    },
+    {
+        "word": "hollow",
+        "pronunciation": "/ˈhɒl.əʊ/",
+        "translation": "空心的，中空的",
+        "image": "https://images.unsplash.com/photo-1578321272176-b7bbdc93808c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "hollow tree",
+        "example": "The children found a small animal living in the hollow tree.",
+        "related": ["empty", "cavity", "void", "space", "tube"]
+    },
+    {
+        "word": "clay",
+        "pronunciation": "/kleɪ/",
+        "translation": "黏土",
+        "image": "https://images.unsplash.com/photo-158473526493db-55b16d7f93b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "make from clay",
+        "example": "In art class, we made pots from clay.",
+        "related": ["pottery", "ceramic", "mud", "soil", "sculpture"]
+    },
+    {
+        "word": "wool",
+        "pronunciation": "/wʊl/",
+        "translation": "羊毛",
+        "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "wool sweater",
+        "example": "This warm wool sweater is perfect for winter.",
+        "related": ["yarn", "fabric", "textile", "knit", "sheep"]
+    },
+    {
+        "word": "metal",
+        "pronunciation": "/ˈmet.əl/",
+        "translation": "金属",
+        "image": "https://images.unsplash.com/photo-158473526493db-55b16d7f93b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "made of metal",
+        "example": "The bridge is made of strong metal.",
+        "related": ["steel", "iron", "copper", "aluminum", "alloy"]
+    },
+    {
+        "word": "material",
+        "pronunciation": "/məˈtɪə.ri.əl/",
+        "translation": "材料",
+        "image": "https://images.unsplash.com/photo-1447875569765-2b3db822bec9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "building material",
+        "example": "Wood is a common building material.",
+        "related": ["substance", "fabric", "resource", "component", "element"]
+    },
+    {
+        "word": "seriously",
+        "pronunciation": "/ˈsɪə.ri.əs.li/",
+        "translation": "认真地；严重地",
+        "image": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "take seriously",
+        "example": "You should take your studies seriously.",
+        "related": ["seriously", "earnestly", "gravely", "severely", "critically"]
+    },
+    {
+        "word": "hose",
+        "pronunciation": "/həʊz/",
+        "translation": "软管",
+        "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "water hose",
+        "example": "I used the water hose to water the plants in the garden.",
+        "related": ["pipe", "tube", "water", "garden", "spray"]
+    },
+    {
+        "word": "axe",
+        "pronunciation": "/æks/",
+        "translation": "斧头",
+        "image": "https://images.unsplash.com/photo-1578321272176-b7bbdc93808c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "chop with an axe",
+        "example": "He used an axe to chop firewood for the winter.",
+        "related": ["tool", "chop", "cut", "wood", "blade"]
+    },
+    {
+        "word": "equipment",
+        "pronunciation": "/ɪˈkwɪp.mənt/",
+        "translation": "设备",
+        "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "sports equipment",
+        "example": "We need to buy some new sports equipment for the team.",
+        "related": ["tools", "gear", "apparatus", "supplies", "instruments"]
+    },
+    {
+        "word": "tool",
+        "pronunciation": "/tuːl/",
+        "translation": "工具",
+        "image": "https://images.unsplash.com/photo-1584395630356-757f4e87436e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "useful tool",
+        "example": "A hammer is a useful tool for many DIY projects.",
+        "related": ["instrument", "device", "implement", "appliance", "utensil"]
+    },
+    {
+        "word": "rescue",
+        "pronunciation": "/ˈres.kjuː/",
+        "translation": "救援",
+        "image": "https://images.unsplash.com/photo-1541414778236-f051a26c51f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "rescue team",
+        "example": "The rescue team arrived quickly to help the people in the flooded area.",
+        "related": ["save", "help", "aid", "emergency", "assistance"]
+    },
+    {
+        "word": "smoky",
+        "pronunciation": "/ˈsməʊ.ki/",
+        "translation": "烟雾弥漫的",
+        "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "smoky room",
+        "example": "The room became smoky when we lit the fire.",
+        "related": ["smoke", "hazy", "foggy", "misty", "polluted"]
+    },
+    {
+        "word": "fire drill",
+        "pronunciation": "/ˈfaɪər drɪl/",
+        "translation": "消防演习",
+        "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "practise a fire drill",
+        "example": "The school will practise a fire drill next Tuesday.",
+        "related": ["safety", "emergency", "evacuation", "practice", "preparation"]
+    },
+    {
+        "word": "queue",
+        "pronunciation": "/kjuː/",
+        "translation": "排队",
+        "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "wait in a queue",
+        "example": "We had to wait in a long queue to buy tickets for the concert.",
+        "related": ["line", "wait", "row", "sequence", "order"]
+    },
+    {
+        "word": "corridor",
+        "pronunciation": "/ˈkɒr.ɪ.dɔːr/",
+        "translation": "走廊",
+        "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "long corridor",
+        "example": "Her office is at the end of the long corridor.",
+        "related": ["hallway", "passage", "aisle", "walkway", "path"]
+    },
+    {
+        "word": "extinguisher",
+        "pronunciation": "/ɪkˈstɪŋ.ɡwɪ.ʃər/",
+        "translation": "灭火器",
+        "image": "https://images.unsplash.com/photo-1578321272176-b7bbdc93808c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "fire extinguisher",
+        "example": "Make sure you know where the fire extinguisher is located.",
+        "related": ["fire", "safety", "emergency", "equipment", "protection"]
+    },
+    {
+        "word": "reel",
+        "pronunciation": "/riːl/",
+        "translation": "卷轴",
+        "image": "https://images.unsplash.com/photo-1578321272176-b7bbdc93808c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "hose reel",
+        "example": "The fire hose was stored on a large reel.",
+        "related": ["spool", "roll", "cylinder", "wheel", "wind"]
+    },
+    {
+        "word": "brochure",
+        "pronunciation": "/ˈbrəʊ.ʃər/",
+        "translation": "小册子",
+        "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "travel brochure",
+        "example": "I picked up a travel brochure to plan our holiday.",
+        "related": ["pamphlet", "booklet", "leaflet", "guide", "catalog"]
+    },
+    {
+        "word": "agent",
+        "pronunciation": "/ˈeɪ.dʒənt/",
+        "translation": "代理人",
+        "image": "https://images.unsplash.com/photo-1587334941662-19ffa56a503f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "real estate agent",
+        "example": "We contacted a real estate agent to help us sell our house.",
+        "related": ["representative", "broker", "middleman", "delegate", "mediator"]
+    },
+    {
+        "word": "brick",
+        "pronunciation": "/brɪk/",
+        "translation": "砖",
+        "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "red brick house",
+        "example": "They live in a lovely red brick house.",
+        "related": ["block", "stone", "building", "construction", "wall"]
+    },
+    {
+        "word": "society",
+        "pronunciation": "/səˈsaɪ.ə.ti/",
+        "translation": "社会",
+        "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "modern society",
+        "example": "Technology plays a big role in modern society.",
+        "related": ["community", "culture", "civilization", "population", "people"]
+    },
+    {
+        "word": "cruelty",
+        "pronunciation": "/ˈkruː.əl.ti/",
+        "translation": "残忍",
+        "image": "https://images.unsplash.com/photo-1548767797-d8c11d6d8c26?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "animal cruelty",
+        "example": "There are strict laws against animal cruelty.",
+        "related": ["brutality", "violence", "harshness", "suffering", "abuse"]
+    },
+    {
+        "word": "chew",
+        "pronunciation": "/tʃuː/",
+        "translation": "咀嚼",
+        "image": "https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "chew food",
+        "example": "It's important to chew your food properly.",
+        "related": ["bite", "munch", "gnaw", "crunch", "eat"]
+    },
+    {
+        "word": "blanket",
+        "pronunciation": "/ˈblæŋ.kɪt/",
+        "translation": "毯子",
+        "image": "https://images.unsplash.com/photo-1552733404-981f7d0e7e0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "warm blanket",
+        "example": "I wrapped myself in a warm blanket on the cold night.",
+        "related": ["cover", "quilt", "throw", "bedding", "comforter"]
+    },
+    {
+        "word": "clinic",
+        "pronunciation": "/ˈklɪn.ɪk/",
+        "translation": "诊所",
+        "image": "https://images.unsplash.com/photo-1516549655669-df5c66acf8e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "health clinic",
+        "example": "She went to the local health clinic for a check-up.",
+        "related": ["hospital", "medical", "health", "doctor", "treatment"]
+    },
+    {
+        "word": "cave",
+        "pronunciation": "/keɪv/",
+        "translation": "洞穴",
+        "image": "https://images.unsplash.com/photo-1546437163-1c0d0c8d7c6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "explore a cave",
+        "example": "The children were excited to explore the dark cave.",
+        "related": ["cavern", "grotto", "hole", "tunnel", "underground"]
+    },
+    {
+        "word": "guard",
+        "pronunciation": "/ɡɑːd/",
+        "translation": "守卫",
+        "image": "https://images.unsplash.com/photo-1548767797-d8c11d6d8c26?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "security guard",
+        "example": "The security guard checked our identification at the entrance.",
+        "related": ["protect", "watch", "defend", "security", "sentry"]
+    },
+    {
+        "word": "hunt",
+        "pronunciation": "/hʌnt/",
+        "translation": "狩猎",
+        "image": "https://images.unsplash.com/photo-1474511320723-9a56873867b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "hunt for food",
+        "example": "In the past, people had to hunt for food.",
+        "related": ["chase", "pursue", "track", "search", "prey"]
+    },
+    {
+        "word": "crowded",
+        "pronunciation": "/ˈkraʊ.dɪd/",
+        "translation": "拥挤的",
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "crowded place",
+        "example": "The market was a very crowded place on Saturday morning.",
+        "related": ["packed", "busy", "full", "congested", "jammed"]
+    },
+    {
+        "word": "Canadian",
+        "pronunciation": "/kəˈneɪ.di.ən/",
+        "translation": "加拿大人",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "Canadian flag",
+        "example": "The Canadian flag has a red maple leaf on it.",
+        "related": ["Canada", "North America", "maple", "Toronto", "Vancouver"]
+    },
+    {
+        "word": "India",
+        "pronunciation": "/ˈɪn.di.ə/",
+        "translation": "印度",
+        "image": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "from India",
+        "example": "My friend is from India, and she teaches me about her culture.",
+        "related": ["Indian", "Asia", "Delhi", "Mumbai", "culture"]
+    },
+    {
+        "word": "sex",
+        "pronunciation": "/seks/",
+        "translation": "性别",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "sex education",
+        "example": "Schools often provide sex education to teenagers.",
+        "related": ["gender", "male", "female", "biology", "reproduction"]
+    },
+    {
+        "word": "junior",
+        "pronunciation": "/ˈdʒuː.ni.ər/",
+        "translation": "初级的；年少的",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "junior team",
+        "example": "My younger brother plays for the junior football team.",
+        "related": ["young", "youth", "beginner", "apprentice", "student"]
+    },
+    {
+        "word": "block",
+        "pronunciation": "/blɒk/",
+        "translation": "街区",
+        "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "city block",
+        "example": "The supermarket is just one block away from here.",
+        "related": ["street", "neighborhood", "area", "section", "district"]
+    },
+    {
+        "word": "construction",
+        "pronunciation": "/kənˈstrʌk.ʃən/",
+        "translation": "建造",
+        "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "under construction",
+        "example": "The new library is still under construction.",
+        "related": ["building", "erection", "development", "work", "project"]
+    },
+    {
+        "word": "parcel",
+        "pronunciation": "/ˈpɑː.səl/",
+        "translation": "包裹",
+        "image": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "receive a parcel",
+        "example": "I received a parcel from my aunt who lives abroad.",
+        "related": ["package", "box", "delivery", "shipment", "mail"]
+    },
+    {
+        "word": "knock down",
+        "pronunciation": "/nɒk daʊn/",
+        "translation": "拆除，撞倒",
+        "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "knock down a building",
+        "example": "They had to knock down the old building to make space for the new park.",
+        "related": ["demolish", "destroy", "tear down", "flatten", "remove"]
+    },
+    {
+        "word": "catch fire",
+        "pronunciation": "/kætʃ ˈfaɪər/",
+        "translation": "着火",
+        "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "catch fire easily",
+        "example": "Dry wood can catch fire easily.",
+        "related": ["ignite", "burn", "blaze", "combust", "flare"]
+    },
+    {
+        "word": "scene",
+        "pronunciation": "/siːn/",
+        "translation": "场景",
+        "image": "https://images.unsplash.com/photo-1519996529931-28324d5a630e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "crime scene",
+        "example": "The police taped off the crime scene.",
+        "related": ["location", "setting", "place", "spot", "view"]
+    },
+    {
+        "word": "wardrobe",
+        "pronunciation": "/ˈwɔː.drəʊb/",
+        "translation": "衣柜",
+        "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "open the wardrobe",
+        "example": "She opened the wardrobe to choose an outfit for the party.",
+        "related": ["closet", "cabinet", "furniture", "storage", "clothes"]
+    },
+    {
+        "word": "estate",
+        "pronunciation": "/ɪˈsteɪt/",
+        "translation": "地产",
+        "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "real estate",
+        "example": "My father works in real estate.",
+        "related": ["property", "land", "house", "development", "asset"]
+    },
+    {
+        "word": "agency",
+        "pronunciation": "/ˈeɪ.dʒən.si/",
+        "translation": "代理处",
+        "image": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "travel agency",
+        "example": "We booked our holiday through a travel agency.",
+        "related": ["office", "bureau", "service", "company", "organization"]
+    },
+    {
+        "word": "suburb",
+        "pronunciation": "/ˈsʌb.ɜːb/",
+        "translation": "郊区",
+        "image": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "live in the suburbs",
+        "example": "They decided to move to the suburbs for a quieter life.",
+        "related": ["outskirts", "neighborhood", "residential", "area", "district"]
+    },
+    {
+        "word": "opposite",
+        "pronunciation": "/ˈɒp.ə.zɪt/",
+        "translation": "相反的；对面的",
+        "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "opposite direction",
+        "example": "They walked off in the opposite direction.",
+        "related": ["contrary", "reverse", "different", "facing", "across"]
+    },
+    {
+        "word": "peaceful",
+        "pronunciation": "/ˈpiːs.fəl/",
+        "translation": "和平的，宁静的",
+        "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "peaceful place",
+        "example": "The lake is a very peaceful place early in the morning.",
+        "related": ["calm", "quiet", "tranquil", "serene", "relaxing"]
+    },
+    {
+        "word": "steep",
+        "pronunciation": "/stiːp/",
+        "translation": "陡峭的",
+        "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "steep hill",
+        "example": "It was a steep hill, so we had to cycle slowly.",
+        "related": ["sharp", "precipitous", "sheer", "abrupt", "vertical"]
+    },
+    {
+        "word": "financial",
+        "pronunciation": "/faɪˈnæn.ʃəl/",
+        "translation": "金融的",
+        "image": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "financial advice",
+        "example": "It's a good idea to get financial advice before making big investments.",
+        "related": ["money", "economic", "monetary", "banking", "investment"]
+    },
+    {
+        "word": "church",
+        "pronunciation": "/tʃɜːtʃ/",
+        "translation": "教堂",
+        "image": "https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "old church",
+        "example": "There is a beautiful old church in the centre of the village.",
+        "related": ["cathedral", "chapel", "worship", "religious", "prayer"]
+    },
+    {
+        "word": "statue",
+        "pronunciation": "/ˈstætʃ.uː/",
+        "translation": "雕像",
+        "image": "https://images.unsplash.com/photo-1562976540-1502c2145186?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "famous statue",
+        "example": "We took a photo in front of the famous statue.",
+        "related": ["sculpture", "monument", "figure", "carving", "art"]
+    },
+    {
+        "word": "storybook",
+        "pronunciation": "/ˈstɔː.ri.bʊk/",
+        "translation": "故事书",
+        "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "read a storybook",
+        "example": "My mother used to read me a storybook every night before bed.",
+        "related": ["book", "tale", "fairy tale", "children", "reading"]
+    },
+    {
+        "word": "glove",
+        "pronunciation": "/ɡlʌv/",
+        "translation": "手套",
+        "image": "https://images.unsplash.com/photo-1571655555397-8c6f7b0a5c5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "phrase": "wear gloves",
+        "example": "You should wear gloves when it's cold outside.",
+        "related": ["mitten", "hand", "warm", "protection", "winter"]
+    }
+]
